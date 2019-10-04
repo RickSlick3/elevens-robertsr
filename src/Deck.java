@@ -29,12 +29,19 @@ public class Deck {
      * @param values is an array containing all of the card point values.
      */
     public Deck(String[] ranks, String[] suits, int[] values) {
+        // instantite our cards instance variable
         cards = new ArrayList<Card>();
+        //loops through the ranks
         for (int j = 0; j < ranks.length; j++) {
+            // loops through the suits 
             for (String suitString : suits) {
+                // add each card to the Arraylist
                 cards.add(new Card(ranks[j], suitString, values[j]));
             }
         }
+        // initialize size variable
+        this.size = cards.size();
+    }// close constructor 
         /**
          * Determines if this deck is empty (no undealt cards).
          *
@@ -42,6 +49,7 @@ public class Deck {
          */
     public boolean isEmpty() {
         /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+        return size == 0;
     }
 
     /**
@@ -51,6 +59,7 @@ public class Deck {
      */
     public int size() {
         /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+        return size;
     }
 
     /**
@@ -70,6 +79,9 @@ public class Deck {
     public Card deal() {
         /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
         // IS EMPTY if so return null
+        if (size == 0) return null;
+        
+        // if its not empty...
         size--;
         Card c = cards.get(size);
         return c;
