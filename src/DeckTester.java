@@ -33,6 +33,7 @@ public class DeckTester {
             // test two strings
             System.out.println(dMoney);
             
+            
             /***** EXAMPLE DECK 2 *****/
             System.out.println(" ---Testing Deck 2--- ");
             String[] job = {"plumber", "banker", "accountant", "manager", "ceo", "unemployed", 

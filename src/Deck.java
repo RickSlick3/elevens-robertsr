@@ -41,12 +41,14 @@ public class Deck {
         }
         // initialize size variable
         this.size = cards.size();
+        shuffle();
     }// close constructor 
-        /**
-         * Determines if this deck is empty (no undealt cards).
-         *
-         * @return true if this deck is empty, false otherwise.
-         */
+
+    /**
+     * Determines if this deck is empty (no undealt cards).
+     *
+     * @return true if this deck is empty, false otherwise.
+     */
     public boolean isEmpty() {
         /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
         return size == 0;
@@ -68,7 +70,18 @@ public class Deck {
      */
     public void shuffle() {
         /* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
-    }
+        Card tempo;
+        
+        for(int k = cards.size() - 1; k > 0; k--){
+            int rand = (int)((Math.random() * (k+1)));
+            
+            tempo = cards.get(rand);
+            cards.set(rand, cards.get(k));
+            cards.set(k, tempo);
+        }
+    }   
+
+
 
     /**
      * Deals a card from this deck.
@@ -79,8 +92,10 @@ public class Deck {
     public Card deal() {
         /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
         // IS EMPTY if so return null
-        if (size == 0) return null;
-        
+        if (size == 0) {
+            return null;
+        }
+
         // if its not empty...
         size--;
         Card c = cards.get(size);
