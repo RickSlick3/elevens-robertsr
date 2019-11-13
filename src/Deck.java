@@ -40,7 +40,6 @@ public class Deck {
             }
         }
         // initialize size variable
-        this.size = cards.size();
         shuffle();
     }// close constructor 
 
@@ -79,6 +78,7 @@ public class Deck {
             cards.set(rand, cards.get(k));
             cards.set(k, tempo);
         }
+        this.size = cards.size();
     }   
 
 
