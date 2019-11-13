@@ -39,7 +39,6 @@ public class Deck {
                 cards.add(new Card(ranks[j], suitString, values[j]));
             }
         }
-        // initialize size variable
         shuffle();
     }// close constructor 
 
@@ -78,6 +77,7 @@ public class Deck {
             cards.set(rand, cards.get(k));
             cards.set(k, tempo);
         }
+        // initialize size variable
         this.size = cards.size();
     }   
 
